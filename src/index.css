@@ -1,0 +1,79 @@
+/* ===============================
+   TAILWIND DIRECTIVES
+================================ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===============================
+   REUSABLE COMPONENT CLASSES
+================================ */
+@layer components {
+  .input-dark {
+    @apply bg-[#273145] border border-[#2c364a] rounded-md px-4 py-2
+      text-sm text-gray-200 placeholder-gray-400
+      focus:outline-none focus:ring-2 focus:ring-purple-500/40;
+  }
+
+  .btn-primary {
+    @apply bg-purple-600 hover:bg-purple-500
+      px-4 py-2 rounded-md text-sm text-white;
+  }
+
+  .btn-secondary {
+    @apply bg-[#2c364a] hover:bg-[#37415a]
+      px-4 py-2 rounded-md text-sm text-white;
+  }
+}
+
+/* ===============================
+   BASE RESET (SAFE)
+================================ */
+@layer base {
+  :root {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: #070c16; /* DARK APP BACKGROUND */
+    color: #e5e7eb; /* gray-200 */
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+/* ===============================
+   BUTTON RESET (OPTIONAL)
+================================ */
+@layer base {
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+  }
+}
+
+/* ===============================
+   UTILITIES
+================================ */
+@layer utilities {
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
